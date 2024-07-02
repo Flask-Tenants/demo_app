@@ -1,54 +1,48 @@
-from flask import request, jsonify, abort
+from flask import request, jsonify, abort, g
 from .models import Post
-from flask_tenants.utils import with_db
 
 
 def create_post_route():
-    with with_db() as session:
-        data = request.get_json()
-        title = data.get('title')
-        author = data.get('author')
-        body = data.get('body')
+    data = request.get_json()
+    name = data.get('name')
+    capacity = data.get('capacity')
+    location = data.get('location')
 
-        if not title or not body or not author:
-            abort(400, description="Post title, body, and author are required")
+    if not name or not capacity:
+        abort(400, description="Post name and capacity are required")
 
-        post = Post(title=title, author=author, body=body)
-        session.add(post)
-        session.commit()
-        return jsonify({"message": "Post created successfully"}), 201
+    post = Post(name=name, capacity=capacity, location=location)
+    g.db_session.add(post)
+    g.db_session.commit()
+    return jsonify({"message": "Post created successfully"}), 201
 
 
 def get_posts_route():
-    with with_db() as session:
-        posts = session.query(Post).all()
-        post_list = [{"id": post.id, "title": post.title, "author": post.author, "body": post.body} for post
-                     in
-                     posts]
-        return jsonify(post_list), 200
+    posts = g.db_session.query(Post).all()
+    post_list = [{"id": post.id, "name": post.name, "capacity": post.capacity, "location": post.location} for post in
+                 posts]
+    return jsonify(post_list), 200
 
 
 def update_post_route(post_id):
-    with with_db() as session:
-        post = session.query(Post).filter_by(id=post_id).first()
-        if not post:
-            abort(404, description="Post not found")
+    post = g.db_session.query(Post).filter_by(id=post_id).first()
+    if not post:
+        abort(404, description="Post not found")
 
-        data = request.get_json()
-        post.title = data.get('title', post.title)
-        post.author = data.get('author', post.author)
-        post.body = data.get('body', post.body)
+    data = request.get_json()
+    post.name = data.get('name', post.name)
+    post.capacity = data.get('capacity', post.capacity)
+    post.location = data.get('location', post.location)
 
-        session.commit()
-        return jsonify({"message": "Post updated successfully"}), 200
+    g.db_session.commit()
+    return jsonify({"message": "Post updated successfully"}), 200
 
 
 def delete_post_route(post_id):
-    with with_db() as session:
-        post = session.query(Post).filter_by(id=post_id).first()
-        if not post:
-            abort(404, description="Post not found")
+    post = g.db_session.query(Post).filter_by(id=post_id).first()
+    if not post:
+        abort(404, description="Post not found")
 
-        session.delete(post)
-        session.commit()
-        return jsonify({"message": "Post deleted successfully"}), 200
+    g.db_session.delete(post)
+    g.db_session.commit()
+    return jsonify({"message": "Post deleted successfully"}), 200

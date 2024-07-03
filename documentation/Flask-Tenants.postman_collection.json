@@ -647,6 +647,266 @@
 									"body": "{\n    \"message\": \"Tenant and its schema deleted successfully\"\n}"
 								}
 							]
+						},
+						{
+							"name": "Deactivate Tenant 1",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/deactivate_tenant/tenant1",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"deactivate_tenant",
+										"tenant1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/deactivate_tenant/tenant1",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"deactivate_tenant",
+												"tenant1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:32:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "59"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant1 deactivated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Deactivate Tenant 2",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/deactivate_tenant/tenant2",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"deactivate_tenant",
+										"tenant2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Deactivate Tenant 1 Copy",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/deactivate_tenant/tenant2",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"deactivate_tenant",
+												"tenant2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:33:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "59"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant2 deactivated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Activate Tenant 1",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/activate_tenant/tenant1",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"activate_tenant",
+										"tenant1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Activate Tenant 1",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/activate_tenant/tenant1",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"activate_tenant",
+												"tenant1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:33:52 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "57"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant1 activated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Activate Tenant 2",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/activate_tenant/tenant2",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"activate_tenant",
+										"tenant2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Activate Tenant 2",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/activate_tenant/tenant2",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"activate_tenant",
+												"tenant2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:34:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "57"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant2 activated successfully\"\n}"
+								}
+							]
 						}
 					]
 				},

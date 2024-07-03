@@ -667,7 +667,7 @@
 							},
 							"response": [
 								{
-									"name": "New Request",
+									"name": "Deactivate Tenant 1",
 									"originalRequest": {
 										"method": "PUT",
 										"header": [],

@@ -1,0 +1,1489 @@
+{
+	"info": {
+		"_postman_id": "efddb287-3691-4bfc-ab97-2cadf90f62e5",
+		"name": "Flask-Tenants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8882566"
+	},
+	"item": [
+		{
+			"name": "Public View",
+			"item": [
+				{
+					"name": "Tenants",
+					"item": [
+						{
+							"name": "Create Tenant 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"tenant1\",\r\n    \"domain_name\": \"tenant1.{{base_domain}}\",\r\n    \"phone_number\": \"123-456-7890\",\r\n    \"address\": \"123 Example St\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/create_tenant",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"create_tenant"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Tenant 1",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"tenant1\",\r\n    \"domain_name\": \"tenant1.{{base_domain}}\",\r\n    \"phone_number\": \"123-456-7890\",\r\n    \"address\": \"123 Example St\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/create_tenant",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"create_tenant"
+											]
+										}
+									},
+									"status": "CREATED",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:20:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "219"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant1 created successfully\",\n    \"tenant\": {\n        \"address\": \"123 Example St\",\n        \"domain_name\": \"tenant1.local.test\",\n        \"id\": 4,\n        \"name\": \"tenant1\",\n        \"phone_number\": \"123-456-7890\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Tenant 2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"tenant2\",\r\n    \"domain_name\": \"tenant2.{{base_domain}}\",\r\n    \"phone_number\": \"234-567-8901\",\r\n    \"address\": \"456 Example St\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/create_tenant",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"create_tenant"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Tenant 2",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"tenant2\",\r\n    \"domain_name\": \"tenant2.{{base_domain}}\",\r\n    \"phone_number\": \"234-567-8901\",\r\n    \"address\": \"456 Example St\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/create_tenant",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"create_tenant"
+											]
+										}
+									},
+									"status": "CREATED",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:19:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "219"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant2 created successfully\",\n    \"tenant\": {\n        \"address\": \"456 Example St\",\n        \"domain_name\": \"tenant2.local.test\",\n        \"id\": 3,\n        \"name\": \"tenant2\",\n        \"phone_number\": \"234-567-8901\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Read Tenant 1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/get_tenant/tenant1",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"get_tenant",
+										"tenant1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Read Tenant 1",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/get_tenant/tenant1",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"get_tenant",
+												"tenant1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:01:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "100"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"address\": \"123 Example St\",\n    \"id\": 1,\n    \"name\": \"tenant1\",\n    \"phone_number\": \"123-456-7890\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Read Tenant 2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/get_tenant/tenant1",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"get_tenant",
+										"tenant1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Read Tenant 2",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/get_tenant/tenant1",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"get_tenant",
+												"tenant1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:01:31 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "100"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"address\": \"123 Example St\",\n    \"id\": 1,\n    \"name\": \"tenant1\",\n    \"phone_number\": \"123-456-7890\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Tenant 1 to Tenant 3",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"tenant3\",\r\n    \"domain_name\": \"tenant3.{{base_domain}}\",\r\n    \"phone_number\": \"123-456-7890\",\r\n    \"address\": \"123 Example St\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/update_tenant/tenant1",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"update_tenant",
+										"tenant1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Tenant 1 to Tenant 3",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"tenant3\",\r\n    \"domain_name\": \"tenant3.{{base_domain}}\",\r\n    \"phone_number\": \"123-456-7890\",\r\n    \"address\": \"123 Example St\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/update_tenant/tenant1",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"update_tenant",
+												"tenant1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:17:42 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "165"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant3 updated successfully\",\n    \"tenant\": {\n        \"address\": \"123 Example St\",\n        \"name\": \"tenant3\",\n        \"phone_number\": \"123-456-7890\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Tenant 2 to Tenant 4",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"tenant4\",\r\n    \"domain_name\": \"tenant4.{{base_domain}}\",\r\n    \"phone_number\": \"123-456-7890\",\r\n    \"address\": \"123 Example St\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/update_tenant/tenant2",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"update_tenant",
+										"tenant2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Tenant 2 to Tenant 4",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"tenant4\",\r\n    \"domain_name\": \"tenant4.{{base_domain}}\",\r\n    \"phone_number\": \"123-456-7890\",\r\n    \"address\": \"123 Example St\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/update_tenant/tenant2",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"update_tenant",
+												"tenant2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:17:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "165"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant tenant4 updated successfully\",\n    \"tenant\": {\n        \"address\": \"123 Example St\",\n        \"name\": \"tenant4\",\n        \"phone_number\": \"123-456-7890\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Tenant 3",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/delete_tenant/tenant3",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"delete_tenant",
+										"tenant3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Tenant 3",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/delete_tenant/tenant3",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"delete_tenant",
+												"tenant3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:18:36 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant and its schema deleted successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Tenant 4",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}/delete_tenant/tenant4",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"delete_tenant",
+										"tenant4"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Tenant 4",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}{{base_domain}}:{{port}}/delete_tenant/tenant4",
+											"host": [
+												"{{protocol}}{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"delete_tenant",
+												"tenant4"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:18:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant and its schema deleted successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get Public Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}{{base_domain}}:{{port}}",
+							"host": [
+								"{{protocol}}{{base_domain}}"
+							],
+							"port": "{{port}}"
+						}
+					},
+					"response": [
+						{
+							"name": "Get Public Index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}{{base_domain}}:{{port}}",
+									"host": [
+										"{{protocol}}{{base_domain}}"
+									],
+									"port": "{{port}}"
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.3 Python/3.12.4"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jul 2024 03:19:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "Welcome to the public index page!"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tenant View",
+			"item": [
+				{
+					"name": "Posts",
+					"item": [
+						{
+							"name": "Create Tenant 1 Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Great Commission\",\r\n    \"body\": \"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.\",\r\n    \"author\": \"Jesus\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts",
+									"host": [
+										"{{protocol}}tenant1",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Tenant 1 Post",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"The Great Commission\",\r\n    \"body\": \"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.\",\r\n    \"author\": \"Jesus\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts",
+											"host": [
+												"{{protocol}}tenant1",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts"
+											]
+										}
+									},
+									"status": "CREATED",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:20:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Post created successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Tenant 2 Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"True Love\",\r\n    \"body\": \"Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things.\",\r\n    \"author\": \"Paul\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts",
+									"host": [
+										"{{protocol}}tenant2",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Tenant 2 Post",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"True Love\",\r\n    \"body\": \"Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things.\",\r\n    \"author\": \"Paul\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts",
+											"host": [
+												"{{protocol}}tenant2",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts"
+											]
+										}
+									},
+									"status": "CREATED",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:19:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Post created successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Tenant 1 Posts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts",
+									"host": [
+										"{{protocol}}tenant1",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Tenant 1 Post",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts",
+											"host": [
+												"{{protocol}}tenant1",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:17:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "340"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"author\": \"Jesus\",\n        \"body\": \"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.\",\n        \"id\": 1,\n        \"title\": \"The Great Commission\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get Tenant 2 Posts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts",
+									"host": [
+										"{{protocol}}tenant2",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Tenant 2 Post",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts",
+											"host": [
+												"{{protocol}}tenant2",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:17:15 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "385"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"author\": \"Paul\",\n        \"body\": \"Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things.\",\n        \"id\": 1,\n        \"title\": \"True Love\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Update Tenant 1 Post",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Salvation\",\r\n    \"body\": \"If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.\",\r\n    \"author\": \"Paul\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts/1",
+									"host": [
+										"{{protocol}}tenant1",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Tenant 1 Post",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Salvation\",\r\n    \"body\": \"If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.\",\r\n    \"author\": \"Paul\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts/1",
+											"host": [
+												"{{protocol}}tenant1",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:07:43 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Post updated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Tenant 2 Post",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Find the Door\",\r\n    \"body\": \"So I say to you: Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.\",\r\n    \"author\": \"Jesus\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts/1",
+									"host": [
+										"{{protocol}}tenant2",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Tenant 2 Post",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Find the Door\",\r\n    \"body\": \"So I say to you: Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.\",\r\n    \"author\": \"Jesus\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts/1",
+											"host": [
+												"{{protocol}}tenant2",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:19:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Post updated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Tenant 1 Post",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts/1",
+									"host": [
+										"{{protocol}}tenant1",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Tenant 1 Post",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}/posts/1",
+											"host": [
+												"{{protocol}}tenant1",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:20:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Post deleted successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Tenant 2 Post",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts/1",
+									"host": [
+										"{{protocol}}tenant2",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"posts",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Tenant 2 Post",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}/posts/1",
+											"host": [
+												"{{protocol}}tenant2",
+												"{{base_domain}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"posts",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Werkzeug/3.0.3 Python/3.12.4"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Jul 2024 03:15:23 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "45"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Post deleted successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get Tenant 1 Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}",
+							"host": [
+								"{{protocol}}tenant1",
+								"{{base_domain}}"
+							],
+							"port": "{{port}}"
+						}
+					},
+					"response": [
+						{
+							"name": "Get Tenant 1 Index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}tenant1.{{base_domain}}:{{port}}",
+									"host": [
+										"{{protocol}}tenant1",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}"
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.3 Python/3.12.4"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jul 2024 03:14:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Welcome to the tenant index page for tenant1!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Tenant 2 Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}",
+							"host": [
+								"{{protocol}}tenant2",
+								"{{base_domain}}"
+							],
+							"port": "{{port}}"
+						}
+					},
+					"response": [
+						{
+							"name": "Get Tenant 2 Index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{protocol}}tenant2.{{base_domain}}:{{port}}",
+									"host": [
+										"{{protocol}}tenant2",
+										"{{base_domain}}"
+									],
+									"port": "{{port}}"
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.3 Python/3.12.4"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jul 2024 03:14:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Welcome to the tenant index page for tenant2!\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

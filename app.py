@@ -6,12 +6,15 @@ from public.models import Tenant, Domain
 from public.routes import public_bp
 from tenants.routes import tenant_bp
 from posts.routes import post_bp
-import logging
+from errors import register_error_handlers
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+
+    # Register error handlers
+    register_error_handlers(app)
 
     # Initialize tenants app
     tenants_init_app(app, tenant_model=Tenant, domain_model=Domain)

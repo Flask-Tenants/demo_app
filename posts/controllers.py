@@ -4,14 +4,14 @@ from .models import Post
 
 def create_post_route():
     data = request.get_json()
-    name = data.get('name')
-    capacity = data.get('capacity')
-    location = data.get('location')
+    title = data.get('title')
+    body = data.get('body')
+    author = data.get('author')
 
-    if not name or not capacity:
+    if not title or not body or not author:
         abort(400, description="Post name and capacity are required")
 
-    post = Post(name=name, capacity=capacity, location=location)
+    post = Post(title=title, body=body, author=author)
     g.db_session.add(post)
     g.db_session.commit()
     return jsonify({"message": "Post created successfully"}), 201
@@ -19,7 +19,7 @@ def create_post_route():
 
 def get_posts_route():
     posts = g.db_session.query(Post).all()
-    post_list = [{"id": post.id, "name": post.name, "capacity": post.capacity, "location": post.location} for post in
+    post_list = [{"id": post.id, "title": post.title, "body": post.body, "author": post.author} for post in
                  posts]
     return jsonify(post_list), 200
 
@@ -30,9 +30,9 @@ def update_post_route(post_id):
         abort(404, description="Post not found")
 
     data = request.get_json()
-    post.name = data.get('name', post.name)
-    post.capacity = data.get('capacity', post.capacity)
-    post.location = data.get('location', post.location)
+    post.title = data.get('title', post.title)
+    post.body = data.get('body', post.body)
+    post.author = data.get('author', post.author)
 
     g.db_session.commit()
     return jsonify({"message": "Post updated successfully"}), 200

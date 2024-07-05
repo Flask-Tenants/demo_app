@@ -1,12 +1,13 @@
 from flask import Flask
 from flask_migrate import Migrate
-from flask_tenants import init_app as tenants_init_app, create_tenancy, db
+from flask_tenants import FlaskTenants
 from config import Config
-from public.models import Tenant, Domain
 from public.routes import public_bp
 from tenants.routes import tenant_bp
 from posts.routes import post_bp
 from errors import register_error_handlers
+from public.models import Tenant, Domain
+from flask_tenants import db
 
 
 def create_app():
@@ -17,18 +18,18 @@ def create_app():
     register_error_handlers(app)
 
     # Initialize tenants app
-    tenants_init_app(app, tenant_model=Tenant, domain_model=Domain)
+    flask_tenants = FlaskTenants(app, tenant_model=Tenant, domain_model=Domain, db=db, tenant_url_prefix='/_tenant')
+    flask_tenants.init()
 
     # Initialize Flask-Migrate
     Migrate(app, db)
 
     # Create tenancy middleware
-    tenancy_middleware = create_tenancy(app, db=db, tenant_url_prefix='/_tenant')
+    root_public_bp = flask_tenants.create_public_blueprint('public')
+    root_tenant_bp = flask_tenants.create_tenant_blueprint('tenant')
+    root_post_bp = flask_tenants.create_tenant_blueprint('post')
 
-    root_public_bp = tenancy_middleware.create_public_blueprint('public')
-    root_tenant_bp = tenancy_middleware.create_tenant_blueprint('tenant')
-    root_post_bp = tenancy_middleware.create_tenant_blueprint('post')
-
+    # Register blueprints
     root_public_bp.register_blueprint(public_bp)
     root_tenant_bp.register_blueprint(tenant_bp)
     root_post_bp.register_blueprint(post_bp)
